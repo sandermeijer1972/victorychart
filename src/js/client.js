@@ -1,355 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryLegend, VictoryGroup } from 'victory';
+import studentData from './studentdata';
 
-const studentData = [
-  {
-    "naam": "Aranka",
-    "opdracht": "SCRUM",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D1-1",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D2-1",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D2-2",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D2-3",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D2-4",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D2-5",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D3-1",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D3-2",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D3-4",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D3-5",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D3 - Guess-the-number",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D4-1",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D4 - Kleurentoggle",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W1D5 - Galgje",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D1-1",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D1-2",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D2-1",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D2-2",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D2-3",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D3-1",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D3-2",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D3-3",
-    "moeilijkheidsgraad": 5,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D4-1",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 5
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D4-2",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 5
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D4-3",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W2D5 - Filmzoeker",
-    "moeilijkheidsgraad": 5,
-    "funfactor": 5
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D1-1",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D1-2",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D1-3",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D1-4",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D2-1",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D2-2",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D2-3",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D3-1",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D3-2",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D3-3",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D3-4",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D4-1",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D4-2",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W3D5 - Todo-List",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D2-1",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D2-2",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D2-3",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D2-4",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D3-1",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D3-2",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D3-3",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D3-4",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D3-5",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W4D3 - Next-Level CSS",
-    "moeilijkheidsgraad": 4,
-    "funfactor": 4
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W5D4-1",
-    "moeilijkheidsgraad": 1,
-    "funfactor": 3
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W5D5 - Lil_Playlist",
-    "moeilijkheidsgraad": 5,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W6D1-1",
-    "moeilijkheidsgraad": 5,
-    "funfactor": 1
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W6D2-1",
-    "moeilijkheidsgraad": 2,
-    "funfactor": 2
-  },
-  {
-    "naam": "Aranka",
-    "opdracht": "W6D2 - Eindopdracht",
-    "moeilijkheidsgraad": 3,
-    "funfactor": 4
-  }
-];
+
+
+const studentNames = [...new Set(studentData.map(item => item.naam))];
+console.log(studentNames);
+
+const assignments = [...new Set(studentData.map(item => item.opdracht))];
+console.log(assignments);
+
+const makeAverageArray = () => {
+  const newArray = [];
+  assignments.forEach(assignment => {
+    let newObject = {naam: "allStudents", opdracht: assignment};
+    const allDifficult = studentData.filter(ass => ass.opdracht === assignment).map(item => item.moeilijkheidsgraad);
+    const averageDifficult = (allDifficult.reduce((accumulator, currentValue) => accumulator + currentValue)) / studentNames.length;
+    newObject["moeilijkheidsgraad"] = averageDifficult;
+    const allFun = studentData.filter(ass => ass.opdracht === assignment).map(item => item.funfactor);
+    const averageFun = (allFun.reduce((accumulator, currentValue) => accumulator + currentValue)) / studentNames.length;
+    newObject["funfactor"] = averageFun;
+    newArray.push(newObject);
+  });
+  return newArray;
+};
+
+const allStudents = makeAverageArray();
+console.log(allStudents);
+
+// const sandra = studentData.filter(item => item.naam === "Sandra");
+// console.log(sandra);
 
 class Main extends React.Component {
   constructor() {
     super()
     this.state = {
       fun: true,
-      difficult: false
+      difficult: true
     }
   }
+
   render() {
+
+    const justFun = () => {
+      this.setState({fun: true, difficult: false})
+    }
+  
+    const justDiff = () => {
+      this.setState({fun: false, difficult: true})
+    }
+  
+    const funAndDiff = () => {
+      this.setState({fun: true, difficult: true})
+    }
+
     return (
       <div style={{backgroundColor: "black"}}>  
         <h1 style={{color: "yellow"}}>Victory Tutorial</h1>
@@ -371,7 +76,7 @@ class Main extends React.Component {
           />          
           <VictoryAxis
             label="opdrachten"
-            tickValues={studentData.map(item => item.opdracht)}   
+            tickValues={allStudents.map(item => item.opdracht)}   
             style={{ 
               axisLabel: {fill: "yellow", fontSize: 7},
               tickLabels: {fill: 'white', angle: 40, fontSize: 3.5, padding: 3, verticalAnchor: 'middle', textAnchor:'start'},
@@ -391,25 +96,34 @@ class Main extends React.Component {
           />
           <VictoryGroup offset={2.1}>
             <VictoryBar
-              data={studentData}
+              data={allStudents}
               x={"opdracht"}
               y={"funfactor"}
               style={{ 
-                data: { fill: "#55FF00" }, 
-                display: !this.state.fun && "none"
+                data: { 
+                  fill: "#55FF00",
+                  display: !this.state.fun && "none"
+                }                
               }}
             />
             <VictoryBar
-              data={studentData}
+              data={allStudents}
               x={"opdracht"}
               y={"moeilijkheidsgraad"}
               style={{ 
-                data: { fill: "#FF0000" },
-                display: !this.state.difficult && "none" 
+                data: { 
+                  fill: "#FF0000",
+                  display: !this.state.difficult && "none"
+                }                 
               }}
             />            
           </VictoryGroup>
         </VictoryChart>
+        <div>
+          <button onClick={justFun}>alleen fun-factor</button>
+          <button onClick={justDiff}>alleen moeilijkheidsgraad</button>
+          <button onClick={funAndDiff}>zowel fun-factor als moeilijkheidsgraad</button>
+        </div>
       </div>
     );
   }
